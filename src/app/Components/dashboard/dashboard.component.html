@@ -1,0 +1,84 @@
+<mat-sidenav-container class="example-container">
+    <!-- Sidebar -->
+    <mat-sidenav #sidenav mode="side" 
+ class="example-sidenav">
+      <mat-nav-list >
+        <!-- Add your navigation items here -->
+         <div class="container">
+
+            <mat-nav-list style="margin-bottom: 35px;margin-top: 15px;">
+                <mat-list-item >
+                    <div class="smallcontainer">
+                        
+                        <mat-icon >home</mat-icon>
+                    <span >Dashboard</span>
+                    </div>
+                    
+                  </mat-list-item>
+                
+              </mat-nav-list>
+            <mat-nav-list>
+            
+                <mat-list-item >
+                    <div class="smallcontainer">
+                        <mat-icon >home</mat-icon>
+                    <span >Home</span>
+                    </div>
+                    
+                  </mat-list-item>
+                
+                <mat-list-item>
+                    <div class="smallcontainer">
+                        <mat-icon matListIcon>person</mat-icon>
+                        <span>Person</span>
+                    </div>
+                </mat-list-item>
+              
+                <mat-list-item>
+                    <div class="smallcontainer">
+                    <mat-icon matListIcon>settings</mat-icon>
+                    <span>Settings</span>
+                    </div>
+                </mat-list-item>
+              
+                <mat-list-item>
+                    <div class="smallcontainer">
+                        <mat-icon matListIcon>logout</mat-icon>
+                        <span>Log out</span>
+                        </div>
+                </mat-list-item>
+              </mat-nav-list>
+
+
+         </div>
+       
+          
+      </mat-nav-list>
+      <button mat-button (click)="sidenav.toggle()">Close Sidebar</button>
+    </mat-sidenav>
+  
+    <!-- Main content with toolbar -->
+    <mat-sidenav-content>
+      <mat-toolbar class="mat-elevation-z3">
+        <button mat-icon-button (click)="sidenav.toggle()" aria-label="Toggle sidenav">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Sportify</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button aria-label="Favorite icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Share icon">
+          <mat-icon>share</mat-icon>
+        </button>
+      </mat-toolbar>
+  
+      <!-- Main page content -->
+
+
+      <div>
+        <p>Main content goes here...</p>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
