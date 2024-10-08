@@ -9,11 +9,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
+import { LogoutComponent } from './logout/logout.component';
+
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
+    LogoutComponent,
   ],
   imports: [
     CommonModule,
@@ -22,7 +25,9 @@ import { RegisterComponent } from './register/register.component';
     MatInputModule,
     MatButtonModule, 
     ReactiveFormsModule ,
-    HttpClientModule
+    HttpClientModule,
+    
+    
   ]
 })
 export class AuthModule { }

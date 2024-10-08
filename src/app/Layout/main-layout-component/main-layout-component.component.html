@@ -12,20 +12,19 @@
       <div class="container">
         <mat-nav-list style="margin-bottom: 35px;margin-top: 15px;">
           <mat-list-item>
-            <div class="smallcontainer">
+            <div class="smallcontainer" [routerLink]="['/products']">
               <mat-icon>dashboard</mat-icon>
               <span>Products</span>
             </div>
           </mat-list-item>
         </mat-nav-list>
         <mat-nav-list>
-          <mat-list-item>
-            <div class="smallcontainer" [routerLink]="['']">
+          <mat-list-item [routerLink]="['']">
+            <div class="smallcontainer" >
               <mat-icon>home</mat-icon>
               <span>Home</span>
             </div>
           </mat-list-item>
-
           <mat-list-item [routerLink]="['/Cart']">
             <div class="smallcontainer">
               <mat-icon>shopping_cart</mat-icon>
@@ -60,8 +59,6 @@
     <!-- <button mat-button (click)="sidenav.toggle()">Close Sidebar</button> -->
   </mat-sidenav>
 
-
-  
   <!-- Main content with toolbar -->
   <mat-sidenav-content>
     <mat-toolbar class="mat-elevation-z3">
@@ -71,51 +68,38 @@
       <span routerLink="" style="cursor: pointer;">Sportify</span>
       <span class="example-spacer"></span>
     
-        <!-- <span>Products</span> -->
+        
          
        
-        <button mat-button routerLink="products">
+        <button mat-button>
           <mat-icon>category  </mat-icon>
           <span>Products</span>
         </button>
        
-      <button mat-icon-button routerLink="Cart">
-        <mat-icon [matBadge]="totalQuantity" matBadgeOverlap="false" class="demo-section"  routerLink="Cart" >shopping_cart</mat-icon>
+      <button mat-icon-button [routerLink]="['/Cart']">
+        
+        <mat-icon  [matBadge]="totalQuantity" matBadgeOverlap="false" class="demo-section" 
+        >shopping_cart</mat-icon>
       </button>
 
-      <button  mat-button [matMenuTriggerFor]="menu" ><mat-icon>person</mat-icon></button>
+      <button  mat-button [matMenuTriggerFor]="menu" >
+        <mat-icon>person</mat-icon></button>
       <mat-menu #menu="matMenu">
-
-        <button  mat-menu-item [routerLink]="['/auth/login']" >Login</button>
-        <button  mat-menu-item  [routerLink]="['/auth/register']">Register</button>
-
-
+        <button mat-menu-item [routerLink]="['/auth/login']">Login</button>
+        <button mat-menu-item [routerLink]="['/auth/register']">Register</button>
       </mat-menu>
-              <!-- <mat-icon>favorite</mat-icon> -->
+           
      
      
     </mat-toolbar>
-<app-slider></app-slider>
 
+    <router-outlet></router-outlet>
     <!-- Main page content -->
-<div class="container">
-  <h1>Latest Products</h1>
-  <app-product [Produkti]="latestproduct" ></app-product>
-
-</div>
-
-  <hr>
 
 
-<div class="content2">
-  <h2>About Us</h2>
-<div class="inner-content">
-  <img src="https://media.licdn.com/dms/image/C4D12AQE7_sVP5NvXoA/article-cover_image-shrink_720_1280/0/1520110596092?e=2147483647&v=beta&t=t8T7f7Eom1ZZbXf7Och_RKlmh4z_icPvf0-M0RQsr14" alt="">
-  <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus praesentium sit ducimus possimus, necessitatibus quisquam officia quasi cumque quam blanditiis! Dolorum dolor sapiente consequatur? Dignissimos natus consequatur sint consequuntur quo.
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum temporibus tempora architecto, reprehenderit voluptas totam quas quibusdam unde sunt natus neque atque deleniti illo ducimus necessitatibus nostrum quos velit cum.</p>
 
-</div>
-</div>
+
+
 
 
 <!-- Footer -->
@@ -172,7 +156,6 @@
         <!-- Grid column -->
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
-          
           <h6 class="text-uppercase fw-bold mb-4">
             Products
           </h6>

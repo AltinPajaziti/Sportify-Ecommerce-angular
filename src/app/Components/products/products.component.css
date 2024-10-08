@@ -1,0 +1,24 @@
+.products-container app-product {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 columns */
+    grid-gap: 2px; /* Gap between grid items */
+  }
+  
+  .product-tile {
+    background: lightblue;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+  }
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.container mat-form-field{
+  margin-top: 15px;
+ 
+
+}

@@ -1,0 +1,24 @@
+.example-card {
+  margin: 15px; /* Space around each card */
+  transition: transform 0.2s; /* Animation effect for hover */
+  width: 250px; /* Fixed width for the card */
+  height: 300px; /* Fixed height for the card */
+  display: flex;
+  flex-direction: column; /* Align children in a column */
+}
+
+.example-card:hover {
+  transform: scale(1.05); /* Slightly enlarge card on hover */
+}
+
+.product-image {
+  width: 100%; /* Full width of the card */
+  height: 150px; /* Fixed height for the image */
+  object-fit: cover; /* Maintain aspect ratio and cover the area */
+}
+
+mat-card-content {
+  flex-grow: 1; /* Allow content area to take remaining space */
+}
+
+

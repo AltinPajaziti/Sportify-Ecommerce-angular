@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router'; // Remove `type`
-import { AuthenticationService } from 'src/app/core/Services/authentication.service'; // Remove `type`
-import { LoginUser } from 'src/app/core/constants/Interfaces/LoginUser'; // Keep this as type for `response`
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/core/Services/authentication.service';
+import type { LoginUser } from 'src/app/core/constants/Interfaces/LoginUser'; // Import `LoginUser` as a type
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -16,9 +17,9 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    public auth: AuthenticationService,
-    public router: Router , 
-    private http : HttpClient
+    private auth: AuthenticationService,
+    private router: Router,
+    private http: HttpClient
   ) {
     this.form = this.fb.group({
       username: ['', Validators.required],
@@ -31,25 +32,34 @@ export class LoginComponent {
 
     this.auth.login(username, password).subscribe({
       next: (response: LoginUser) => {
-
-        console.log(response)
         if (response.status !== 'ok') {
-          this.router.navigate(['']);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Wrong username or password",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });
+          this.router.navigate(['/login']);
           return;
         }
 
+        // Store user details in localStorage
         localStorage.setItem('Username', response.username);
         localStorage.setItem('Token', response.token);
         localStorage.setItem('Role', response.role);
 
-        this.router.navigate(['/dashboard']);
+        // Navigate to home (or another desired route)
+        this.router.navigate(['']);
       },
       error: (err) => {
         console.error('Login error:', err);
-        this.router.navigate(['']); 
+        Swal.fire({
+          icon: 'error',
+          title: 'Login Failed',
+          text: 'Please check your credentials and try again.'
+        });
+        this.router.navigate(['/login']);
       }
     });
-
- 
   }
 }

@@ -1,0 +1,37 @@
+<div class="some-content" style="display: flex;justify-content: space-between;">
+  <h1 mat-dialog-title>{{ data.name }}</h1>
+    <button mat-button mat-dialog-close class="close-button">x</button> 
+</div>
+
+
+
+<div class="product-dialog-content" style="padding: 10px;">
+  <img src="{{data.photo}}" alt="Product Image" style="width: 350px; margin: 10px; ">
+
+  <div class="product-details">
+    <h4><b>Product Name</b></h4>
+    <p>{{ data.name }}</p>
+
+    <h4><b>Description</b></h4>
+    <p>{{ data.description }}</p>
+
+    <h4><b>Price</b></h4>
+    <p>{{ data.price  }}</p>
+
+    <div class="quantity-selector">
+      <button mat-button (click)="decrease()" style="border: 1px solid black;">-</button>
+      <input type="text" [value]="quantity" readonly class="quantity-display">
+      <button mat-button style="border: 1px solid black; background-color: white;" (click)="increase()">+</button>
+    </div>
+
+    <!-- Dialog Actions -->
+    <div mat-dialog-actions class="action-buttons" style=" display: flex;justify-content: space-around;">
+      <div class="right-buttons" style="margin-right: 20px;">
+        <button mat-button mat-dialog-close class="Basket-button" (click)="addToBasket()">Add to Basket</button>
+        <button mat-button class="buyitnow" (click)="BuyNow(data.id)">Buy it now</button>
+      </div>
+      <!-- <button mat-button mat-dialog-close class="close-button">Close</button> -->
+
+    </div>
+  </div>
+</div>

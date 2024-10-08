@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,12 +12,36 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { ProductComponent } from './Components/product/product.component';
+import { ProductsService } from './core/Services/products.service';
+import {MatCardModule} from '@angular/material/card';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SliderComponent } from './Components/slider/slider.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { ProductsComponent } from './Components/products/products.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MainLayoutComponentComponent } from './Layout/main-layout-component/main-layout-component.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import { MatBadgeModule } from '@angular/material/badge';
+
+import { ProductDialogComponent } from './Components/product-dialog/product-dialog.component';
+import { CartComponent } from './Components/cart/cart.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductComponent,
+    SliderComponent,
+    ProductsComponent,
+    MainLayoutComponentComponent,
+    ProductDialogComponent,
+    CartComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -27,7 +52,24 @@ import { MatSidenavModule } from '@angular/material/sidenav';
      MatButtonModule,
       MatIconModule,
       MatListModule,
-      MatSidenavModule
+      MatSidenavModule,
+      MatCardModule,
+      NgbModule,
+      MatMenuModule,
+      MatGridListModule,
+      MatDialogModule,
+       MatButtonModule,
+       MatTableModule,
+       MatBadgeModule,
+       MatFormFieldModule,
+       MatInputModule,
+       MatSelectModule
+      
+       
+      
+      
+      
+      
   ],
   providers: [],
   bootstrap: [AppComponent]

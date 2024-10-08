@@ -5,6 +5,8 @@ import { Register } from '../constants/Interfaces/Register';
 import { catchError, type Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import Swal from 'sweetalert2';
+
 
 interface RegisterDto {
   name: string;
@@ -27,7 +29,15 @@ export class AuthenticationService {
       catchError(err => {
         console.error('Login error:', err);
         if (err.error) {
-          alert(err.error.message || 'Login failed');
+          
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Wrong username or password",
+              footer: '<a href="#">Why do I have this issue?</a>'
+            });
+            this.router.navigate(['/login']);
+     
         }
         this.router.navigate(['']);
         throw err; 
@@ -35,6 +45,12 @@ export class AuthenticationService {
     );
   }
   
+  Logout(){
+    localStorage.removeItem('Username');
+    localStorage.removeItem('Token');
+    localStorage.removeItem('Role');
+    this.router.navigate(['/login']);
+  }
 
   Register(register : RegisterDto){
     return this.http.post<Register>(this.ap_url + 'Register', register);

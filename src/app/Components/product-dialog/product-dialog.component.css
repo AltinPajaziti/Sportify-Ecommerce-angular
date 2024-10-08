@@ -1,0 +1,52 @@
+.product-dialog-content {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .product-details {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+  }
+  
+  .quantity-display {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+    font-size: 16px;
+    padding: 5px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .close-button {
+    align-self: flex-start;
+  }
+  
+  .right-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+
+  .buyitnow{
+    background-color: rgb(65, 65, 236);
+    color: white;
+    
+  }
+
+  .Basket-button{
+    border: 1px solid blue;
+    color: blue;
+  }
