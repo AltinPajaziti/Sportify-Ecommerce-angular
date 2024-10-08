@@ -29,6 +29,7 @@ import { ProductDialogComponent } from './Components/product-dialog/product-dial
 import { CartComponent } from './Components/cart/cart.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { MatInputModule } from '@angular/material/input';
        MatBadgeModule,
        MatFormFieldModule,
        MatInputModule,
-       MatSelectModule
+       MatSelectModule,
+       ReactiveFormsModule,
       
        
       

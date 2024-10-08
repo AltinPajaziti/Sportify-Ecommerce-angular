@@ -10,12 +10,13 @@
     border-radius: 8px;
     text-align: center;
   }
-.container{
+form{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
 }
+
 
 .container mat-form-field{
   margin-top: 15px;

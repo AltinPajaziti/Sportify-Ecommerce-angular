@@ -15,6 +15,7 @@
             <div class="smallcontainer">
               <mat-icon>dashboard</mat-icon>
               <span>Products</span>
+             
             </div>
           </mat-list-item>
         </mat-nav-list>
@@ -30,6 +31,12 @@
             <div class="smallcontainer">
               <mat-icon>shopping_cart</mat-icon>
               <span>Cart</span>
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="smallcontainer">
+              <mat-icon>favorite</mat-icon>
+              <span>Favorite Items</span>
             </div>
           </mat-list-item>
           <mat-list-item>
@@ -75,9 +82,12 @@
          
        
         <button mat-button routerLink="products">
+          
           <mat-icon>category  </mat-icon>
           <span>Products</span>
+          
         </button>
+        <mat-icon [matBadge]="totalQuantity">favorite</mat-icon>
        
       <button mat-icon-button routerLink="Cart">
         <mat-icon [matBadge]="totalQuantity" matBadgeOverlap="false" class="demo-section"  routerLink="Cart" >shopping_cart</mat-icon>

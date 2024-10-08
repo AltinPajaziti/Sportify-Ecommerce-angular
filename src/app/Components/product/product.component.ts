@@ -52,7 +52,11 @@ export class ProductComponent   {
 
   }
 
+  favorite: boolean[] = [false, false, false];
 
+  toggleFavorite( index : number) {
+    this.favorite[index] = !this.favorite;
+  }
 
 
   AddToCart(data:any){

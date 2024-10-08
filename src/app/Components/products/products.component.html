@@ -1,38 +1,40 @@
 <div class="container">
+  <form [formGroup]="Forma"  (ngSubmit)="GetFilterData()">
     <!-- General Input Field -->
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Input</mat-label>
-      <input matInput placeholder="Enter value">
+      <input matInput placeholder="Enter value" formControlName="Input">
     </mat-form-field>
   
     <!-- Location Dropdown -->
-    <mat-form-field appearance="fill" class="full-width">
+    <!-- <mat-form-field appearance="fill" class="full-width">
       <mat-label>Location</mat-label>
       <mat-select formControlName="location">
         <mat-option value="one">First option</mat-option>
         <mat-option value="two">Second option</mat-option>
       </mat-select>
-    </mat-form-field>
+    </mat-form-field> -->
   
     <!-- Price Filter Inputs -->
     <div class="price-filter-container" style="display: flex; gap:10px;">
       <!-- Price From Input (Smaller) -->
       <mat-form-field appearance="fill" class="small-input"  style="width: 80px;">
         <mat-label style="font-size: small;">From</mat-label>
-        <input matInput formControlName="From" placeholder="From" type="number" style="width: 80px;">
+        <input matInput formControlName="PriceFrom" placeholder="From" type="number" style="width: 80px;">
       </mat-form-field>
   
       <!-- Price To Input (Smaller) -->
       <mat-form-field appearance="fill" class="small-input"  style="width: 80px;">
         <mat-label style="font-size: small;">To</mat-label>
-        <input matInput formControlName="To" placeholder="To" type="number" style="width: 80px;">
+        <input matInput formControlName="PriceTo" placeholder="To" type="number" style="width: 80px;">
       </mat-form-field>
     </div>
   
     <!-- Submit Button -->
     <button mat-raised-button color="primary">Filter</button>
+  </form>
   </div>
-  
+
   <!-- Grid Layout for Products -->
   <mat-grid-list cols="3" rowHeight="2:1">
     <div class="products-container">
