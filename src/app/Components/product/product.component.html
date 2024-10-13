@@ -8,20 +8,26 @@
   </mat-card-content>
   
   <mat-card-actions style="display: flex; align-items: center; justify-content: space-evenly;">
-    <mat-icon (click)="toggleFavorite(i)" [style.color]="favorite[i] ? 'red' : 'grey'" style="font-size: 24px;">
-      {{ favorite ? 'favorite' : 'favorite_border' }}
+    <mat-icon
+      (click)="AddToFav(product.id); toggleFavorite(i)"
+      [ngStyle]="{'color': favorite[i] ? 'red' : 'grey'}"
+      style="font-size: 24px; transition: color 0.3s ease; flex-grow: 1; text-align: center; height: 30px;"
+      class="heart-icon"
+    >
+      {{ favorite[i] ? 'favorite' : 'favorite_border' }}
     </mat-icon>
-    <button mat-button (click)="openDialog(product.id)">View</button>
-
-    <button mat-button style="border: 1px solid  #3f51b5;; color:  #3f51b5;; display: flex; justify-content: center; align-items: center; margin: 0 auto; height: 40px; width: 100px;" (click)="AddToCart(product)">
-      <mat-icon >shopping_cart</mat-icon>
-
-      
+  
+    <button mat-button 
+            (click)="openDialog(product.id)"
+            style="flex-grow: 1; text-align: center;">
+      View
     </button>
-   
-    
-
-    
-    
+  
+    <button mat-button 
+            style="border: 1px solid #3f51b5; color: #3f51b5; display: flex; justify-content: center; align-items: center; height: 40px; background-color: transparent; transition: background-color 0.3s ease, color 0.3s ease; flex-grow: 1; margin: 10px;"
+            (click)="AddToCart(product)">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
   </mat-card-actions>
+  
 </mat-card>

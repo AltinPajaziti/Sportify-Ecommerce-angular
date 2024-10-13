@@ -20,5 +20,23 @@
 mat-card-content {
   flex-grow: 1; /* Allow content area to take remaining space */
 }
+button:hover {
+  background-color: #3f51b5; /* Change to the color you like */
+  color: white; /* Adjust text/icon color to contrast with the background */
+}
+.heart-icon {
+  display: flex; /* Flexbox for centering */
+  justify-content: center; 
+  align-items: center; 
+  height: 30px;
+  width: 30px;
+  transition: all 0.7s ease;
+}
 
-
+.heart-icon:hover {
+  background-color: rgb(249, 99, 99); 
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 10%; 
+}

@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit{
   products: Product[] = []; 
   latestproduct : Product[] = []
   public totalQuantity = 0;
+  public totalFavorites = 0;
   private subscription: Subscription = new Subscription();
   public Login: any = null
 
@@ -23,6 +24,16 @@ export class DashboardComponent implements OnInit{
   constructor(public productsService: ProductsService ,private cartService: CartService ) { }
 
   ngOnInit(): void {
+    this.totalFavorites = this.productsService.FavProduct.value
+    if(this.productsService.trigger){
+      this.productsService.GetCount().subscribe({
+        next: Response =>{
+          this.totalFavorites = Response
+        }
+      })
+      
+
+    }
    let  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
     this.LatestProducts();
 
@@ -44,7 +55,9 @@ export class DashboardComponent implements OnInit{
       })
     );
   }
-
+  AddToFav(){
+    
+  }
 
   
 

@@ -5,6 +5,7 @@ import { ProductComponent } from './Components/product/product.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { MainLayoutComponentComponent } from './Layout/main-layout-component/main-layout-component.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { FavoriteProductsComponent } from './Components/favorite-products/favorite-products.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent }, 
@@ -12,6 +13,7 @@ const routes: Routes = [
     {path:'' , component: MainLayoutComponentComponent , children:[
     {path:'products' , component: ProductsComponent },
     {path:'Cart' , component: CartComponent },
+    { path : 'Favorite' , component : FavoriteProductsComponent},
     { path: 'auth', loadChildren: () => import('../app/modules/auth/auth/auth.module').then(m => m.AuthModule) },
 
   ]},

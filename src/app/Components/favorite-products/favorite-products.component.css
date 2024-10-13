@@ -1,0 +1,14 @@
+.cart-container{
+    width: 75%;
+    margin: 0 auto;
+}
+table{
+    margin: 20px;
+}
+.custom-fab {
+    background-color: #3f51b5; /* Your desired color */
+    color: white; /* Text/icon color */
+}
+th , td{
+    text-align: center;
+}

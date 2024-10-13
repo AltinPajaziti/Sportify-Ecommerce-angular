@@ -7,12 +7,18 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
 import { CartService } from 'src/app/core/Services/cart.service';
 import Swal from 'sweetalert2';
+import { JsonPipe } from '@angular/common';
 
 export interface DialogData {
   name: string, 
         description :  string, 
         price :  string, 
         photo :  string, 
+}
+
+export  interface Favorite{
+  productid : number,
+  Quantity : number
 }
 @Component({
   selector: 'app-product',
@@ -24,7 +30,7 @@ export class ProductComponent   {
 
   dialog = inject(MatDialog);
 
-  constructor(private cartservice : CartService) {
+  constructor(private cartservice : CartService , private Productserice : ProductsService ) {
 
     
   }
@@ -82,9 +88,50 @@ export class ProductComponent   {
     });
   }
 
+  AddToFav(productid : number){
 
+
+    Swal.fire({
+      position: "top",
+      icon: "success",
+      title: "Product Added to Favorites Successfully",
+      showConfirmButton: false,
+      timer: 1000
+    });
+
+    this.Productserice.AddProductToFavorites(productid).subscribe({
+      next : Response =>{
+        console.log(Response)
+      }
+    })
+    // let Favorites  = JSON.parse(localStorage.getItem('Favorites') || '[]')
+   
+    // let existingProduct = Favorites.find((e: any) => e.productid === productid);
+    // if (existingProduct) {
+    //   console.log("here is there")
+    //   existingProduct.quantity++;
+
+    // let existinFavorites : Favorite={
+    //   productid : productid,
+    //   Quantity : 1
+    // }
+
+    // Favorites.push(existinFavorites)
+    // console.log("helo there")
+
+    // localStorage.setItem('Favorites' , JSON.stringify(Favorites))
+
+      
+    // }
+   
+
+  
 
 
 
 
 }
+   
+
+}
+
